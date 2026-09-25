@@ -492,8 +492,12 @@ export default function Room() {
                           opts={{ width: '100%', height: '100%', playerVars: { autoplay: 1, controls: 0, modestbranding: 1, disablekb: 1, fs: 0, rel: 0, iv_load_policy: 3 } }}
                           onReady={onPlayerReady}
                           onStateChange={onStateChange}
-                          style={{ width: '100%', height: '100%', pointerEvents: 'none', transform: 'scale(1.4)', transformOrigin: 'center center' }}
+                          style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
                         />
+                        {/* YouTube Thanks Message Overlay */}
+                        <div style={{ position: 'absolute', bottom: '10px', right: '15px', zIndex: 11, fontSize: '0.75rem', color: 'rgba(255,255,255,0.7)', fontWeight: '500', background: 'rgba(0,0,0,0.5)', padding: '4px 10px', borderRadius: '50px', backdropFilter: 'blur(4px)', pointerEvents: 'none' }}>
+                          Video Provided by Youtube Team Thanks
+                        </div>
                       </div>
                     </div>
 
