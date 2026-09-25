@@ -445,7 +445,7 @@ export default function Room() {
                   <div key={item.id.videoId} className="queue-item" onClick={() => handleAddToQueue(item)} style={{ background: 'rgba(255,255,255,0.03)', marginBottom: '12px', cursor: 'pointer' }}>
                     <img src={item.snippet.thumbnails.default.url} alt="thumbnail" />
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="text-truncate" style={{ fontWeight: '600', color: '#fff', fontSize: '1rem', marginBottom: '4px' }}>{item.snippet.title}</div>
+                      <div className="text-truncate" style={{ fontWeight: '600', color: '#fff', fontSize: '1rem', marginBottom: '4px' }}>{getCleanTitle(item.snippet.title)}</div>
                       <div className="text-truncate" style={{ fontSize: '0.85rem', color: '#a1a1aa' }}>{item.snippet.channelTitle}</div>
                     </div>
                   </div>
