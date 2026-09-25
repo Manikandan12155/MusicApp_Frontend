@@ -461,6 +461,7 @@ export default function Room() {
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, width: '100%' }}>
+                {currentSong ? (
                   <div className="active-song-card" style={{ position: 'relative', width: '100%' }}>
                     <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
                       <div className="artwork-container">
@@ -500,7 +501,7 @@ export default function Room() {
                           opts={{ width: '100%', height: '100%', playerVars: { autoplay: 1, controls: 0, modestbranding: 1, disablekb: 1, fs: 0, rel: 0, iv_load_policy: 3 } }}
                           onReady={onPlayerReady}
                           onStateChange={onStateChange}
-                          style={{ width: '100%', height: '100%', pointerEvents: 'none', transform: 'scale(1.5)', transformOrigin: 'center center' }}
+                          style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
                         />
                         {/* Premium Illusion Badge */}
                         {isVideoMode && (
@@ -532,8 +533,9 @@ export default function Room() {
                           </div>
                         )}
                       </div>
+                    </div>
                       
-                      {/* Alien Audience Overlay */}
+                    {/* Alien Audience Overlay */}
                       <img 
                         src="/audience.png" 
                         alt="Audience watching" 
