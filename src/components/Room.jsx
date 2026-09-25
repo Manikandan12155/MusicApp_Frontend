@@ -463,6 +463,13 @@ export default function Room() {
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, width: '100%' }}>
                 {currentSong ? (
                   <div className="active-song-card" style={{ position: 'relative', width: '100%' }}>
+                    {isVideoMode && (
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '90%', marginBottom: '12px', padding: '0 10px' }}>
+                        {Array.from({ length: 20 }).map((_, i) => (
+                          <div key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#facc15', boxShadow: '0 0 8px #facc15, 0 0 15px #fbbf24', animation: `pulse ${1.5 + (i % 3)}s infinite alternate` }} />
+                        ))}
+                      </div>
+                    )}
                     <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
                       <div className="artwork-container">
                         {/* Audio Mode Image */}
@@ -535,21 +542,22 @@ export default function Room() {
                       </div>
                     </div>
                       
-                    {/* Alien Audience Overlay */}
+                      {/* Alien Audience Overlay */}
                       <img 
                         src="/audience.png" 
                         alt="Audience watching" 
                         style={{
                           position: 'absolute',
-                          bottom: '-15px', 
+                          bottom: '-45px', 
                           left: '50%',
                           transform: 'translateX(-50%)',
-                          width: '102%',
+                          width: '75%',
                           zIndex: 20,
                           pointerEvents: 'none',
                           opacity: isVideoMode ? 1 : 0.4,
                           filter: 'drop-shadow(0 -10px 20px rgba(0,0,0,1))',
-                          transition: 'opacity 0.5s ease'
+                          transition: 'opacity 0.5s ease',
+                          clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 85%)' // Crops out the ChatGPT text box!
                         }}
                       />
                     </div>
