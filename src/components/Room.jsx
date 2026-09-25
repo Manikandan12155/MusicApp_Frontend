@@ -548,10 +548,10 @@ export default function Room() {
                         alt="Audience watching" 
                         style={{
                           position: 'absolute',
-                          bottom: '-45px', 
+                          bottom: '-15px', 
                           left: '50%',
                           transform: 'translateX(-50%)',
-                          width: '75%',
+                          width: '80%',
                           zIndex: 20,
                           pointerEvents: 'none',
                           opacity: isVideoMode ? 1 : 0.4,
