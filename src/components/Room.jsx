@@ -62,6 +62,7 @@ export default function Room() {
 
   const playerRef = useRef(null);
   const ignoreNextEvent = useRef(false);
+  const initialSyncTime = useRef(0);
 
   useEffect(() => {
     if (!username) {
@@ -78,6 +79,8 @@ export default function Room() {
       setUsers(state.users);
       setQueue(state.queue);
       if (state.currentSong) {
+        ignoreNextEvent.current = true;
+        initialSyncTime.current = state.timestamp;
         setCurrentSong(state.currentSong);
         setSongDetails(state.songDetails);
         setIsPlaying(state.isPlaying);
@@ -91,6 +94,7 @@ export default function Room() {
 
     newSocket.on('play_new_song', ({ videoId, details, timestamp }) => {
       ignoreNextEvent.current = true;
+      initialSyncTime.current = timestamp;
       setCurrentSong(videoId);
       setSongDetails(details);
       setIsPlaying(true);
@@ -195,6 +199,12 @@ export default function Room() {
   const onPlayerReady = (event) => {
     playerRef.current = event.target;
     setDuration(event.target.getDuration() || 0);
+    
+    // Sync to the correct timestamp when the player loads for the first time
+    if (initialSyncTime.current > 0) {
+      event.target.seekTo(initialSyncTime.current, true);
+      initialSyncTime.current = 0;
+    }
   };
 
   const onStateChange = (event) => {
