@@ -461,25 +461,25 @@ export default function Room() {
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, width: '100%' }}>
-                {currentSong ? (
-                  <div className="active-song-card">
-                    <div className="artwork-container">
-                      {/* Audio Mode Image */}
-                      <img
-                        src={songDetails ? songDetails.thumbnail : `https://img.youtube.com/vi/${currentSong}/maxresdefault.jpg`}
-                        alt="Album Art"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          opacity: isVideoMode ? 0 : 1,
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          transition: 'opacity 0.3s ease',
-                          zIndex: 1
-                        }}
-                      />
+                  <div className="active-song-card" style={{ position: 'relative', width: '100%' }}>
+                    <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                      <div className="artwork-container">
+                        {/* Audio Mode Image */}
+                        <img
+                          src={songDetails ? songDetails.thumbnail : `https://img.youtube.com/vi/${currentSong}/maxresdefault.jpg`}
+                          alt="Album Art"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            opacity: isVideoMode ? 0 : 1,
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            transition: 'opacity 0.3s ease',
+                            zIndex: 1
+                          }}
+                        />
 
                       {/* Video Player */}
                       <div style={{
@@ -532,6 +532,24 @@ export default function Room() {
                           </div>
                         )}
                       </div>
+                      
+                      {/* Alien Audience Overlay */}
+                      <img 
+                        src="/audience.png" 
+                        alt="Audience watching" 
+                        style={{
+                          position: 'absolute',
+                          bottom: '-15px', 
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '102%',
+                          zIndex: 20,
+                          pointerEvents: 'none',
+                          opacity: isVideoMode ? 1 : 0.4,
+                          filter: 'drop-shadow(0 -10px 20px rgba(0,0,0,1))',
+                          transition: 'opacity 0.5s ease'
+                        }}
+                      />
                     </div>
 
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

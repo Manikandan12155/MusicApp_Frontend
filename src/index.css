@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -232,8 +232,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 500px;
+  width: 95%;
+  max-width: 1100px;
   margin: auto;
   animation: fadeIn 0.5s ease-out;
 }
@@ -245,13 +245,13 @@ body {
 
 .artwork-container {
   width: 100%;
-  max-width: 560px;
+  
   aspect-ratio: 16 / 9;
   height: auto;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 50px rgba(168, 85, 247, 0.4), 0 0 100px rgba(0, 212, 255, 0.1);
   margin-bottom: 24px;
   border: 1px solid rgba(255,255,255,0.1);
   background: #000;
@@ -587,3 +587,5 @@ body {
 }
 
 @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+
