@@ -494,6 +494,35 @@ export default function Room() {
                           onStateChange={onStateChange}
                           style={{ width: '100%', height: '100%', pointerEvents: 'none', transform: 'scale(1.5)', transformOrigin: 'center center' }}
                         />
+                        {/* Premium Illusion Badge */}
+                        {isVideoMode && (
+                          <div style={{
+                            position: 'absolute',
+                            bottom: '16px',
+                            right: '16px',
+                            zIndex: 11,
+                            background: 'rgba(10, 10, 15, 0.7)',
+                            backdropFilter: 'blur(10px)',
+                            padding: '6px 12px',
+                            borderRadius: '8px',
+                            border: '1px solid rgba(168, 85, 247, 0.3)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            pointerEvents: 'none',
+                            boxShadow: '0 4px 15px rgba(0,0,0,0.5)'
+                          }}>
+                            <div style={{ width: '6px', height: '6px', background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 10px #22c55e', animation: 'pulse 2s infinite' }}></div>
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                              <span style={{ color: '#e4e4e7', fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.5px' }}>
+                                SPACEMUSIC AUDIO ENGINE
+                              </span>
+                              <span style={{ color: '#a1a1aa', fontSize: '0.6rem', fontWeight: '500', textTransform: 'uppercase' }}>
+                                Visuals synced via YouTube API
+                              </span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
 
