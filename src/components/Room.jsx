@@ -59,6 +59,7 @@ export default function Room() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [inviteCopied, setInviteCopied] = useState(false);
 
   const playerRef = useRef(null);
   const ignoreNextEvent = useRef(false);
@@ -361,6 +362,13 @@ export default function Room() {
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
+  const handleInvite = () => {
+    const message = `🎧 Jump into my SpaceMusic pod!\nLet's vibe to some tracks together in perfect sync 🚀\n\nBase Coordinate (Room ID): ${roomId}\nJoin here: ${window.location.origin}`;
+    navigator.clipboard.writeText(message);
+    setInviteCopied(true);
+    setTimeout(() => setInviteCopied(false), 2500);
+  };
+
   // Generate dynamic progress bar gradient string
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
   const progressStyle = {
@@ -416,8 +424,8 @@ export default function Room() {
             </div>
           </div>
 
-          <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-            <UserPlus size={18} /> Invite Friends
+          <button className="btn-primary" onClick={handleInvite} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'all 0.3s' }}>
+            <UserPlus size={18} /> {inviteCopied ? 'Invite Copied!' : 'Invite Friends'}
           </button>
         </div>
 
