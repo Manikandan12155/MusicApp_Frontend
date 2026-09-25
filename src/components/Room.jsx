@@ -208,19 +208,14 @@ export default function Room() {
   };
 
   const onStateChange = (event) => {
-    if (!socket || ignoreNextEvent.current) {
-      ignoreNextEvent.current = false;
-      return;
-    }
-    const timestamp = playerRef.current.getCurrentTime();
+    if (!socket) return;
+    
     setDuration(playerRef.current.getDuration() || 0);
 
     if (event.data === 1) {
       setIsPlaying(true);
-      socket.emit('sync_play', { roomId, timestamp });
     } else if (event.data === 2) {
       setIsPlaying(false);
-      socket.emit('sync_pause', { roomId, timestamp });
     } else if (event.data === 0) {
       socket.emit('song_ended', { roomId, lastVideoId: currentSong });
     }
