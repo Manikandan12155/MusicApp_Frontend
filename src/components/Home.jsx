@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
+  const [showWifiPopup, setShowWifiPopup] = useState(false);
   const [username, setUsername] = useState('');
   const [roomId, setRoomId] = useState('');
   const navigate = useNavigate();
 
-  const handleCreateRoom = () => {
+  const handleCreateRoomClick = () => {
     if (!username) return alert('Enter a username to board!');
+    setShowWifiPopup(true);
+  };
+
+  const handleProceedCreateRoom = () => {
     const newRoomId = Math.random().toString(36).substring(2, 8).toUpperCase();
     navigate(`/room/${newRoomId}`, { state: { username } });
   };
@@ -21,7 +26,7 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', position: 'relative', color: '#fff', overflow: 'hidden' }}>
-      
+
       {/* Background Video */}
       <video
         autoPlay
@@ -54,17 +59,17 @@ export default function Home() {
       }}></div>
 
       {/* Navbar */}
-      <header style={{ 
-        position: 'relative', 
-        zIndex: 10, 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        padding: '2rem 4rem' 
+      <header style={{
+        position: 'relative',
+        zIndex: 10,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '2rem 4rem'
       }}>
-        <div style={{ 
-          fontSize: '2rem', 
-          fontWeight: '900', 
+        <div style={{
+          fontSize: '2rem',
+          fontWeight: '900',
           background: 'linear-gradient(90deg, #b026ff 0%, #00d4ff 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
@@ -72,8 +77,8 @@ export default function Home() {
         }}>
           SpaceMusic
         </div>
-        
-        <button 
+
+        <button
           onClick={() => setShowForm(true)}
           style={{
             background: 'linear-gradient(90deg, #b026ff 0%, #00d4ff 100%)',
@@ -95,34 +100,34 @@ export default function Home() {
       </header>
 
       {/* Hero Content */}
-      <main style={{ 
-        position: 'relative', 
-        zIndex: 10, 
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center', 
+      <main style={{
+        position: 'relative',
+        zIndex: 10,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
         height: 'calc(100vh - 120px)',
         textAlign: 'center',
         padding: '0 2rem'
       }}>
-        <h1 style={{ 
-          fontSize: '5.5rem', 
-          fontWeight: '900', 
+        <h1 style={{
+          fontSize: '5.5rem',
+          fontWeight: '900',
           margin: '0 0 1rem 0',
           textShadow: '0 4px 30px rgba(0,0,0,0.8)',
           lineHeight: '1.1'
         }}>
           Vibe across the <span style={{ color: '#00d4ff' }}>galaxy.</span>
         </h1>
-        <p style={{ 
-          fontSize: '1.4rem', 
-          color: '#e0e0e0', 
-          maxWidth: '700px', 
+        <p style={{
+          fontSize: '1.4rem',
+          color: '#e0e0e0',
+          maxWidth: '700px',
           lineHeight: '1.6',
           textShadow: '0 2px 10px rgba(0,0,0,0.8)'
         }}>
-          Listen to music together with your crew in perfect sync, no matter where you are in the universe. 
+          Listen to music together with your crew in perfect sync, no matter where you are in the universe.
           Create a room, invite friends, and start the party.
         </p>
       </main>
@@ -142,17 +147,17 @@ export default function Home() {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          <div style={{ 
-            background: 'rgba(20, 20, 25, 0.9)', 
-            padding: '3rem', 
-            borderRadius: '24px', 
+          <div style={{
+            background: 'rgba(20, 20, 25, 0.9)',
+            padding: '3rem',
+            borderRadius: '24px',
             border: '1px solid rgba(0,212,255,0.3)',
             boxShadow: '0 0 50px rgba(0,0,0,0.5)',
             width: '100%',
             maxWidth: '450px',
             position: 'relative'
           }}>
-            <button 
+            <button
               onClick={() => setShowForm(false)}
               style={{
                 position: 'absolute',
@@ -169,27 +174,27 @@ export default function Home() {
             </button>
 
             <h3 style={{ margin: '0 0 2rem 0', color: '#00d4ff', textAlign: 'center', fontSize: '1.5rem' }}>Enter Coordinates</h3>
-            
-            <input 
-              type="text" 
-              className="input-field" 
-              placeholder="Astronaut Name (Username)" 
+
+            <input
+              type="text"
+              className="input-field"
+              placeholder="Astronaut Name (Username)"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', marginBottom: '1.5rem', padding: '16px' }}
             />
-            
+
             <div style={{ display: 'flex', gap: '10px', marginBottom: '24px' }}>
-              <input 
-                type="text" 
-                className="input-field" 
-                placeholder="Room ID to Join" 
+              <input
+                type="text"
+                className="input-field"
+                placeholder="Room ID to Join"
                 value={roomId}
                 onChange={(e) => setRoomId(e.target.value)}
                 style={{ marginBottom: 0, background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)', padding: '16px' }}
               />
-              <button 
-                className="btn-primary" 
+              <button
+                className="btn-primary"
                 onClick={handleJoinRoom}
                 style={{ background: '#00d4ff', color: '#000', padding: '0 24px' }}
               >
@@ -199,12 +204,69 @@ export default function Home() {
 
             <div style={{ textAlign: 'center', margin: '20px 0', color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem' }}>OR CREATE A NEW ONE</div>
 
-            <button 
-              className="btn-primary" 
-              onClick={handleCreateRoom}
-              style={{ width: '100%', background: 'linear-gradient(90deg, #b026ff 0%, #00d4ff 100%)', color: '#fff', padding: '16px' }}
+            <button
+              className="btn-primary"
+              onClick={handleCreateRoomClick}
+              style={{ width: '100%', background: 'linear-gradient(90deg, #b026ff 0%, #00d4ff 100%)', color: '#fff', padding: '16px', border: 'none', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold' }}
             >
               Create New Base
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Wifi Pairing Popup */}
+      {showWifiPopup && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          background: 'rgba(0, 0, 0, 0.8)',
+          backdropFilter: 'blur(15px)',
+          zIndex: 200,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <div style={{
+            background: 'rgba(20, 20, 25, 0.95)',
+            padding: '3rem',
+            borderRadius: '24px',
+            border: '1px solid #b026ff',
+            boxShadow: '0 0 50px rgba(176, 38, 255, 0.3)',
+            width: '100%',
+            maxWidth: '450px',
+            position: 'relative',
+            textAlign: 'center'
+          }}>
+            <button
+              onClick={() => setShowWifiPopup(false)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1.5rem',
+                background: 'transparent',
+                border: 'none',
+                color: '#fff',
+                fontSize: '1.5rem',
+                cursor: 'pointer'
+              }}
+            >
+              ✕
+            </button>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📡</div>
+            <h3 style={{ margin: '0 0 1rem 0', color: '#b026ff', fontSize: '1.5rem' }}>Local Network Pairing</h3>
+            <p style={{ color: '#e0e0e0', lineHeight: '1.6', marginBottom: '2rem' }}>
+              Did you know? You can seamlessly pair with friends who are connected to the same Wi-Fi network!
+            </p>
+            <button
+              className="btn-primary"
+              onClick={handleProceedCreateRoom}
+              style={{ width: '100%', background: 'linear-gradient(90deg, #b026ff 0%, #00d4ff 100%)', color: '#fff', padding: '16px', borderRadius: '50px', border: 'none', cursor: 'pointer', fontWeight: 'bold' }}
+            >
+              Launch Base
             </button>
           </div>
         </div>

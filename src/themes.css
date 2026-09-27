@@ -1,0 +1,507 @@
+/* 
+  Theme Design System for SpaceMusic
+  Variables are overridden based on the data-theme attribute on the body tag.
+*/
+
+[data-theme="glassmorphism"] {
+  --bg-color: #020617;
+  --bg-image: url('/space_music_bg.jpg');
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  
+  --accent-primary: #a855f7;
+  --accent-secondary: #3b82f6;
+  
+  --surface-bg: rgba(15, 23, 42, 0.45);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --surface-radius: 20px;
+  --surface-blur: 16px;
+  
+  --btn-bg: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  --btn-text: #ffffff;
+  --btn-radius: 50px;
+  --btn-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  --btn-hover-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  --btn-hover-transform: translateY(-2px);
+  
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: 1px solid rgba(255, 255, 255, 0.08);
+  --input-focus-border: var(--accent-primary);
+  --input-focus-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: 1px solid rgba(168, 85, 247, 0.3);
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+  --card-hover-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  --card-radius: 16px;
+  
+  --item-hover-bg: rgba(255, 255, 255, 0.05);
+  --item-active-bg: rgba(168, 85, 247, 0.15);
+  --item-active-border: 1px solid rgba(168, 85, 247, 0.3);
+  --item-active-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+  
+  --artwork-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.3);
+  --artwork-border: 1px solid rgba(255, 255, 255, 0.1);
+  --artwork-radius: 16px;
+  
+  --pill-bg: rgba(255, 255, 255, 0.05);
+  --pill-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="neumorphism"] {
+  --bg-color: #e0e5ec;
+  --bg-image: url('/bg_neumorphism.jpg');
+  
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  
+  --accent-primary: #4f46e5;
+  --accent-secondary: #4f46e5;
+  
+  --surface-bg: rgba(224, 229, 236, 0.85);
+  --surface-border: 1px solid rgba(255, 255, 255, 0.2);
+  --surface-shadow: 9px 9px 16px rgba(0,0,0,0.2), -9px -9px 16px rgba(255,255,255, 0.5);
+  --surface-radius: 20px;
+  --surface-blur: 0px;
+  
+  --btn-bg: rgba(224, 229, 236, 0.9);
+  --btn-text: var(--accent-primary);
+  --btn-radius: 50px;
+  --btn-shadow: 6px 6px 12px rgba(0,0,0,0.2), -6px -6px 12px rgba(255,255,255,0.7);
+  --btn-hover-shadow: inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.7);
+  --btn-hover-transform: translateY(0);
+  
+  --input-bg: rgba(224, 229, 236, 0.5);
+  --input-shadow: inset 4px 4px 8px rgba(0,0,0,0.1), inset -4px -4px 8px rgba(255,255,255,0.7);
+  --input-border: 1px solid transparent;
+  --input-focus-border: transparent;
+  --input-focus-shadow: inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.7);
+  
+  --card-bg: rgba(224, 229, 236, 0.85);
+  --card-border: 1px solid transparent;
+  --card-shadow: 5px 5px 10px rgba(0,0,0,0.2), -5px -5px 10px rgba(255,255,255,0.7);
+  --card-hover-bg: #e0e5ec;
+  --card-hover-shadow: inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.7);
+  --card-radius: 16px;
+  
+  --item-hover-bg: #d1d9e6;
+  --item-active-bg: #e0e5ec;
+  --item-active-border: 1px solid transparent;
+  --item-active-shadow: inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.7);
+  
+  --artwork-shadow: 9px 9px 16px rgba(0,0,0,0.2), -9px -9px 16px rgba(255,255,255, 0.5);
+  --artwork-border: 1px solid transparent;
+  --artwork-radius: 16px;
+  
+  --pill-bg: #e0e5ec;
+  --pill-border: 1px solid transparent;
+}
+
+[data-theme="claymorphism"] {
+  --bg-color: #f8f9fa;
+  --bg-image: url('/bg_claymorphism.jpg');
+  
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  
+  --accent-primary: #fb7185;
+  --accent-secondary: #f43f5e;
+  
+  --surface-bg: rgba(255,255,255,0.85);
+  --surface-border: 1px solid transparent;
+  --surface-shadow: 8px 8px 16px rgba(0,0,0,0.15), -8px -8px 16px rgba(255,255,255,0.7), inset 4px 4px 8px rgba(255, 255, 255, 0.6), inset -4px -4px 8px rgba(0, 0, 0, 0.05);
+  --surface-radius: 32px;
+  --surface-blur: 0px;
+  
+  --btn-bg: #fb7185;
+  --btn-text: #ffffff;
+  --btn-radius: 32px;
+  --btn-shadow: 4px 4px 10px rgba(244, 63, 94, 0.4), inset 2px 2px 4px rgba(255, 255, 255, 0.4), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  --btn-hover-shadow: 2px 2px 5px rgba(244, 63, 94, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.1);
+  --btn-hover-transform: translateY(2px);
+  
+  --input-bg: rgba(243, 244, 246, 0.6);
+  --input-shadow: inset 4px 4px 8px rgba(0,0,0,0.1), inset -4px -4px 8px rgba(255,255,255,0.7);
+  --input-border: 1px solid transparent;
+  --input-focus-border: transparent;
+  --input-focus-shadow: inset 4px 4px 8px rgba(0,0,0,0.1), inset -4px -4px 8px rgba(255,255,255,0.7);
+  
+  --card-bg: rgba(255,255,255,0.85);
+  --card-border: 1px solid transparent;
+  --card-hover-bg: rgba(255,255,255,0.85);
+  --card-hover-shadow: 10px 10px 20px rgba(0,0,0,0.15), -10px -10px 20px rgba(255,255,255,0.7);
+  --card-radius: 24px;
+  
+  --item-hover-bg: #f3f4f6;
+  --item-active-bg: #ffe4e6;
+  --item-active-border: 1px solid transparent;
+  --item-active-shadow: none;
+  
+  --artwork-shadow: 10px 10px 20px rgba(0,0,0,0.15), -10px -10px 20px rgba(255,255,255,0.7), inset 4px 4px 8px rgba(255,255,255,0.5);
+  --artwork-border: 1px solid transparent;
+  --artwork-radius: 32px;
+  
+  --pill-bg: #f3f4f6;
+  --pill-border: 1px solid transparent;
+}
+
+[data-theme="skeuomorphism"] {
+  --bg-color: #2b2b2b;
+  --bg-image: url('/bg_skeuomorphism.jpg');
+  
+  --text-primary: #e0e0e0;
+  --text-secondary: #999999;
+  
+  --accent-primary: #ff9800;
+  --accent-secondary: #f57c00;
+  
+  --surface-bg: linear-gradient(145deg, #333333, #2a2a2a);
+  --surface-border: 1px solid #444444;
+  --surface-shadow: 5px 5px 15px rgba(0,0,0,0.8), inset 1px 1px 2px rgba(255,255,255,0.1);
+  --surface-radius: 12px;
+  --surface-blur: 0px;
+  
+  --btn-bg: linear-gradient(to bottom, #444444, #222222);
+  --btn-text: #ffffff;
+  --btn-radius: 8px;
+  --btn-shadow: 0 4px 6px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.4);
+  --btn-hover-shadow: 0 2px 4px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.6);
+  --btn-hover-transform: translateY(2px);
+  
+  --input-bg: inset 0 2px 5px rgba(0,0,0,0.8);
+  --input-border: 1px solid #111111;
+  --input-focus-border: #ff9800;
+  --input-focus-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+  
+  --card-bg: linear-gradient(145deg, #383838, #2a2a2a);
+  --card-border: 1px solid #4d4d4d;
+  --card-hover-bg: linear-gradient(145deg, #3d3d3d, #2e2e2e);
+  --card-hover-shadow: 0 8px 16px rgba(0,0,0,0.8);
+  --card-radius: 8px;
+  
+  --item-hover-bg: rgba(0, 0, 0, 0.2);
+  --item-active-bg: linear-gradient(to bottom, #ff9800, #f57c00);
+  --item-active-border: 1px solid #e65100;
+  --item-active-shadow: inset 0 1px 2px rgba(255,255,255,0.4);
+  
+  --artwork-shadow: 0 10px 20px rgba(0,0,0,0.9), inset 0 2px 5px rgba(255,255,255,0.2);
+  --artwork-border: 4px solid #1a1a1a;
+  --artwork-radius: 4px;
+  
+  --pill-bg: linear-gradient(to bottom, #444, #222);
+  --pill-border: 1px solid #111;
+}
+
+[data-theme="aurora"] {
+  --bg-color: #000000;
+  --bg-image: url('/bg_aurora.jpg');
+  
+  --text-primary: #ffffff;
+  --text-secondary: #8b9bb4;
+  
+  --accent-primary: #14ffec;
+  --accent-secondary: #ff00e4;
+  
+  --surface-bg: rgba(11, 15, 25, 0.6);
+  --surface-border: 1px solid rgba(255, 255, 255, 0.05);
+  --surface-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(20, 255, 236, 0.1);
+  --surface-radius: 24px;
+  --surface-blur: 24px;
+  
+  --btn-bg: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  --btn-text: #ffffff;
+  --btn-radius: 50px;
+  --btn-shadow: 0 0 20px rgba(20, 255, 236, 0.4);
+  --btn-hover-shadow: 0 0 30px rgba(255, 0, 228, 0.6);
+  --btn-hover-transform: translateY(-2px);
+  
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --input-border: 1px solid rgba(255, 255, 255, 0.1);
+  --input-focus-border: var(--accent-primary);
+  --input-focus-shadow: 0 0 15px rgba(20, 255, 236, 0.3);
+  
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: 1px solid rgba(255, 255, 255, 0.05);
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+  --card-hover-shadow: 0 0 25px rgba(255, 0, 228, 0.2);
+  --card-radius: 20px;
+  
+  --item-hover-bg: rgba(255, 255, 255, 0.05);
+  --item-active-bg: rgba(20, 255, 236, 0.1);
+  --item-active-border: 1px solid rgba(20, 255, 236, 0.3);
+  --item-active-shadow: 0 0 15px rgba(20, 255, 236, 0.2);
+  
+  --artwork-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 0, 228, 0.2);
+  --artwork-border: 1px solid rgba(255,255,255,0.1);
+  --artwork-radius: 24px;
+  
+  --pill-bg: rgba(255, 255, 255, 0.05);
+  --pill-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="liquid-glass"] {
+  --bg-color: #e0c3fc;
+  --bg-image: url('/bg_liquid_glass.jpg');
+  
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  
+  --surface-bg: rgba(255, 255, 255, 0.4);
+  --surface-border: 1px solid rgba(255, 255, 255, 0.5);
+  --surface-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --surface-radius: 30px;
+  --surface-blur: 20px;
+  
+  --btn-bg: rgba(255, 255, 255, 0.6);
+  --btn-text: var(--accent-primary);
+  --btn-radius: 50px;
+  --btn-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  --btn-hover-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  --btn-hover-transform: translateY(-2px) scale(1.02);
+  
+  --input-bg: rgba(255, 255, 255, 0.3);
+  --input-border: 1px solid rgba(255, 255, 255, 0.4);
+  --input-focus-border: var(--accent-primary);
+  --input-focus-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --card-border: 1px solid rgba(255, 255, 255, 0.4);
+  --card-hover-bg: rgba(255, 255, 255, 0.3);
+  --card-hover-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  --card-radius: 20px;
+  
+  --item-hover-bg: rgba(255, 255, 255, 0.4);
+  --item-active-bg: rgba(255, 255, 255, 0.6);
+  --item-active-border: 1px solid rgba(255, 255, 255, 0.8);
+  --item-active-shadow: 0 4px 15px rgba(31, 38, 135, 0.1);
+  
+  --artwork-shadow: 0 15px 35px rgba(31, 38, 135, 0.2);
+  --artwork-border: 2px solid rgba(255, 255, 255, 0.6);
+  --artwork-radius: 20px;
+  
+  --pill-bg: rgba(255, 255, 255, 0.4);
+  --pill-border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="metallic"] {
+  --bg-color: #1a1a1a;
+  --bg-image: url('/bg_metallic.jpg');
+  
+  --text-primary: #e0e0e0;
+  --text-secondary: #888888;
+  
+  --accent-primary: #e0e0e0;
+  --accent-secondary: #ffffff;
+  
+  --surface-bg: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+  --surface-border: 1px solid #4a4a4a;
+  --surface-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 0 5px 15px rgba(0,0,0,0.8);
+  --surface-radius: 4px;
+  --surface-blur: 0px;
+  
+  --btn-bg: linear-gradient(to bottom, #444, #222);
+  --btn-text: #ffffff;
+  --btn-radius: 4px;
+  --btn-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 4px rgba(0,0,0,0.5);
+  --btn-hover-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 4px 8px rgba(0,0,0,0.6);
+  --btn-hover-transform: translateY(0);
+  
+  --input-bg: #111111;
+  --input-border: 1px solid #333333;
+  --input-focus-border: #666666;
+  --input-focus-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+  
+  --card-bg: linear-gradient(to bottom, #333, #222);
+  --card-border: 1px solid #444;
+  --card-hover-bg: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+  --card-hover-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  --card-radius: 4px;
+  
+  --item-hover-bg: #2a2a2a;
+  --item-active-bg: #333333;
+  --item-active-border: 1px solid #555555;
+  --item-active-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  
+  --artwork-shadow: 0 10px 20px rgba(0,0,0,0.8);
+  --artwork-border: 2px solid #444;
+  --artwork-radius: 2px;
+  
+  --pill-bg: linear-gradient(to bottom, #444, #222);
+  --pill-border: 1px solid #555;
+}
+
+[data-theme="cyberpunk"] {
+  --bg-size: cover;
+  --bg-color: #050505;
+  --bg-image: url('/bg_cyberpunk.jpg');
+  
+  --text-primary: #00ffff;
+  --text-secondary: #ff0055;
+  
+  --accent-primary: #00ffff;
+  --accent-secondary: #ff0055;
+  
+  --surface-bg: rgba(15, 15, 19, 0.8);
+  --surface-border: 1px solid #00ffff;
+  --surface-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  --surface-radius: 0px;
+  --surface-blur: 5px;
+  
+  --btn-bg: transparent;
+  --btn-text: #00ffff;
+  --btn-radius: 0px;
+  --btn-shadow: 0 0 10px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(0, 255, 255, 0.2);
+  --btn-hover-shadow: 0 0 20px rgba(255, 0, 85, 0.6), inset 0 0 10px rgba(255, 0, 85, 0.3);
+  --btn-hover-transform: none;
+  
+  --input-bg: rgba(0, 0, 0, 0.5);
+  --input-border: 1px solid #ff0055;
+  --input-focus-border: #00ffff;
+  --input-focus-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  
+  --card-bg: rgba(0, 0, 0, 0.6);
+  --card-border: 1px solid #333;
+  --card-hover-bg: rgba(20, 20, 25, 0.8);
+  --card-hover-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  --card-radius: 0px;
+  
+  --item-hover-bg: rgba(0, 255, 255, 0.1);
+  --item-active-bg: rgba(255, 0, 85, 0.2);
+  --item-active-border: 1px solid #ff0055;
+  --item-active-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+  
+  --artwork-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  --artwork-border: 2px solid #00ffff;
+  --artwork-radius: 0px;
+  
+  --pill-bg: transparent;
+  --pill-border: 1px solid #ff0055;
+}
+
+[data-theme="brutalist"] {
+  --bg-size: cover;
+  --bg-color: #ffffff;
+  --bg-image: url('/bg_brutalist.jpg');
+  
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  
+  --accent-primary: #000000;
+  --accent-secondary: #000000;
+  
+  --surface-bg: #ffffff;
+  --surface-border: 3px solid #000000;
+  --surface-shadow: 8px 8px 0px #000000;
+  --surface-radius: 0px;
+  --surface-blur: 0px;
+  
+  --btn-bg: #eab308;
+  --btn-text: #000000;
+  --btn-radius: 0px;
+  --btn-shadow: 4px 4px 0px #000000;
+  --btn-hover-shadow: 2px 2px 0px #000000;
+  --btn-hover-transform: translate(2px, 2px);
+  
+  --input-bg: #ffffff;
+  --input-border: 3px solid #000000;
+  --input-focus-border: #000000;
+  --input-focus-shadow: 4px 4px 0px #000000;
+  
+  --card-bg: #ffffff;
+  --card-border: 3px solid #000000;
+  --card-hover-bg: #f3f4f6;
+  --card-hover-shadow: 8px 8px 0px #000000;
+  --card-radius: 0px;
+  
+  --item-hover-bg: #f3f4f6;
+  --item-active-bg: #000000;
+  --item-active-border: 3px solid #000000;
+  --item-active-shadow: none;
+  
+  --artwork-shadow: 12px 12px 0px #000000;
+  --artwork-border: 4px solid #000000;
+  --artwork-radius: 0px;
+  
+  --pill-bg: #ffffff;
+  --pill-border: 2px solid #000000;
+}
+
+[data-theme="y2k"] {
+  --bg-color: #ff00ff;
+  --bg-image: url('/bg_y2k.jpg');
+  
+  --text-primary: #ffffff;
+  --text-secondary: #ffff00;
+  
+  --accent-primary: #ffff00;
+  --accent-secondary: #00ffff;
+  
+  --surface-bg: rgba(255, 255, 255, 0.2);
+  --surface-border: 2px solid #ffffff;
+  --surface-shadow: 5px 5px 0px #ffff00;
+  --surface-radius: 20px;
+  --surface-blur: 5px;
+  
+  --btn-bg: linear-gradient(180deg, #ff00ff, #0000ff);
+  --btn-text: #ffff00;
+  --btn-radius: 20px;
+  --btn-shadow: 0 0 10px #ffffff, 3px 3px 0 #ffff00;
+  --btn-hover-shadow: 0 0 20px #ffffff, 4px 4px 0 #00ffff;
+  --btn-hover-transform: scale(1.05);
+  
+  --input-bg: rgba(0, 0, 0, 0.5);
+  --input-border: 2px solid #00ffff;
+  --input-focus-border: #ffff00;
+  --input-focus-shadow: 0 0 15px #ffff00;
+  
+  --card-bg: rgba(255, 0, 255, 0.3);
+  --card-border: 2px solid #00ffff;
+  --card-hover-bg: rgba(255, 0, 255, 0.5);
+  --card-hover-shadow: 5px 5px 0px #ffff00;
+  --card-radius: 15px;
+  
+  --item-hover-bg: rgba(0, 255, 255, 0.3);
+  --item-active-bg: rgba(255, 255, 0, 0.3);
+  --item-active-border: 2px solid #ffff00;
+  --item-active-shadow: 0 0 10px #ffff00;
+  
+  --artwork-shadow: 10px 10px 0px #00ffff;
+  --artwork-border: 3px solid #ff00ff;
+  --artwork-radius: 15px;
+  
+  --pill-bg: rgba(0, 255, 255, 0.5);
+  --pill-border: 2px solid #ffffff;
+}
+
+/* Adjust layout rules specific to brutalisim etc. */
+[data-theme="brutalist"] .play-circle-btn,
+[data-theme="cyberpunk"] .play-circle-btn,
+[data-theme="metallic"] .play-circle-btn,
+[data-theme="skeuomorphism"] .play-circle-btn {
+  border-radius: var(--btn-radius);
+}
+
+[data-theme="brutalist"] .control-btn,
+[data-theme="cyberpunk"] .control-btn,
+[data-theme="metallic"] .control-btn,
+[data-theme="skeuomorphism"] .control-btn {
+  border-radius: var(--btn-radius);
+}
+
+[data-theme="y2k"] .text-secondary {
+  color: #ffff00 !important;
+}
+
+[data-theme="brutalist"] * {
+  font-family: monospace, system-ui !important;
+  text-transform: uppercase;
+}
+
+[data-theme="cyberpunk"] * {
+  font-family: 'Courier New', Courier, monospace !important;
+}
